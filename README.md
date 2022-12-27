@@ -10,7 +10,6 @@
 3. npm install or yarn add
 
 4. npm run dev
-
 ```
 
 ### node version
