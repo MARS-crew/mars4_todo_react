@@ -1,17 +1,33 @@
 /* eslint-disable */
+// ** React Imports
+import React, { useEffect } from 'react'
 
-// React Imports
-import React from 'react'
+// ** Router Imports
+import { Route, Routes, useNavigate } from 'react-router-dom'
 
-// Router Imports
-import { Route, Routes } from 'react-router-dom'
+// ** Page Imports
+import LoginPage from './page/login'
+import Todo from './page/todo'
+
+const getHomeRoute = () => {
+    return '/login'
+}
 
 function App() {
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const homeRoute = getHomeRoute()
+
+        // navigate(homeRoute)
+    }, [])
+
     return (
         <>
-            <h1>Mars4_todo_React</h1>
             <Routes>
-                <Route />
+                <Route path="/" element={<h1>Home</h1>} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/todo" element={<Todo />} />
             </Routes>
         </>
     )
