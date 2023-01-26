@@ -16,13 +16,13 @@ const getHomeRoute = () => {
 }
 
 function App() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
-    useEffect(() => {
-        const homeRoute = getHomeRoute()
+    // useEffect(() => {
+    //     const homeRoute = getHomeRoute()
 
-        navigate(homeRoute)
-    }, [])
+    //     navigate(homeRoute)
+    // }, [])
 
     return (
         <Routes>
