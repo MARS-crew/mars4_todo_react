@@ -2,16 +2,18 @@
 import React, { useState } from 'react'
 
 // ** Router Imports
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 // ** Api Imports
-import { login } from '../../api/auth'
+import { loginApi } from '../../api/auth'
 
 // ** Style
 import S from './style'
 
 function LoginPage() {
     const [user, setUser] = useState({ id: '', password: '' })
+
+    const navigate = useNavigate()
 
     const onChange = (e) => {
         const { name, value } = e.target
@@ -23,7 +25,11 @@ function LoginPage() {
 
     const onCLickLoginBtn = async () => {
         try {
-            const res = await login(user)
+            const { data } = await loginApi(user)
+            if (data.status === 200) {
+                alert('로그인 성공')
+                navigate('/main')
+            }
             console.log(res)
         } catch (err) {
             console.log(err)
