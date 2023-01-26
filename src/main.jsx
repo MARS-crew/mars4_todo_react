@@ -6,8 +6,9 @@ import App from './App'
 
 // ** Redux Imports
 import { Provider } from 'react-redux'
-
 import { store } from './store/index'
+
+// ** Router Imports
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -4,8 +4,8 @@ import React from 'react'
 // ** Style
 import S from './style'
 
-function TodoPage() {
-    return <S.Text>Todo Page</S.Text>
+function MainPage() {
+    return <S.Text>Main Page</S.Text>
 }
 
-export default TodoPage
+export default MainPage

@@ -7,10 +7,12 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 
 // ** Page Imports
 import LoginPage from './page/login'
-import Todo from './page/todo'
+import MainPage from './page/main'
+import RegisterPage from './page/register'
+import HomePage from './page/home'
 
 const getHomeRoute = () => {
-    return '/login'
+    return '/'
 }
 
 function App() {
@@ -19,17 +21,16 @@ function App() {
     useEffect(() => {
         const homeRoute = getHomeRoute()
 
-        // navigate(homeRoute)
+        navigate(homeRoute)
     }, [])
 
     return (
-        <>
-            <Routes>
-                <Route path="/" element={<h1>Home</h1>} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/todo" element={<Todo />} />
-            </Routes>
-        </>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/main" element={<MainPage />} />
+        </Routes>
     )
 }
 
