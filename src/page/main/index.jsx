@@ -9,6 +9,11 @@ import { FullPage, Slide } from 'react-full-page'
 // ** Other Views Imports
 import TodoList from '../../views/main/todoList'
 import AddForm from '../../views/main/addForm'
+import FirstView from '../../views/main/firstView'
+import SecondView from '../../views/main/secondView'
+import ThirdView from '../../views/main/thirdView'
+import FourthView from '../../views/main/fourthView'
+import FifthView from '../../views/main/fifthView'
 
 // ** Redux Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -38,18 +43,19 @@ function MainPage() {
                 <S.Text>Main Page</S.Text>
                 <AddForm setReRenderSwitch={setReRenderSwitch} />
                 <TodoList responseData={responseData} />
+                <FirstView />
             </Slide>
             <Slide>
-                <S.Text>Main Page</S.Text>
+                <SecondView />
             </Slide>
             <Slide>
-                <S.Text>Main Page</S.Text>
+                <ThirdView />
             </Slide>
             <Slide>
-                <S.Text>Main Page</S.Text>
+                <FourthView />
             </Slide>
             <Slide>
-                <S.Text>Main Page</S.Text>
+                <FifthView />
             </Slide>
         </FullPage>
     )
