@@ -12,6 +12,23 @@
 4. npm run dev
 ```
 
+### Directory Structure
+
+```js
+root
+└─src // app, index, cookie
+  ├─ api // auth, workbooks
+  ├─ assets // color, font..
+  ├─ components // components file
+  ├─ page // page file
+  ├─ store // redux
+  ├─ style // global style
+  ├─ utils // cookie, hooks
+  ├─ views // Views file
+  ├─ App.jsx
+  └─ main.jsx
+```
+
 ### using library
 
 -   React 18
