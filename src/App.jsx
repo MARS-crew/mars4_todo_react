@@ -10,6 +10,7 @@ import LoginPage from './page/login'
 import MainPage from './page/main'
 import RegisterPage from './page/register'
 import HomePage from './page/home'
+import GlobalStyle from './style/GlobalStyle'
 
 const getHomeRoute = () => {
     return '/'
@@ -25,12 +26,15 @@ function App() {
     // }, [])
 
     return (
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/main" element={<MainPage />} />
-        </Routes>
+        <>
+            <GlobalStyle />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/main" element={<MainPage />} />
+            </Routes>
+        </>
     )
 }
 
