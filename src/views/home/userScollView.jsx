@@ -19,7 +19,7 @@ function UserScrollView() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        fade: true,
+        // fade: true,
     }
     return (
         <Slider {...settings}>
