@@ -79,7 +79,7 @@ function LoginPage(props) {
             handleOpen()
         } catch (err) {
             console.log(err)
-            setMessgaeFalse('에러가 발생하였습니다.')
+            setMessgaeFalse('에러가 발생하였습니다!!')
             handleFalseOpen()
         }
     }
