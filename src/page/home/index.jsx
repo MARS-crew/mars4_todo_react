@@ -1,20 +1,32 @@
 // ** React Imports
-import React from 'react'
+import React, { useState } from 'react'
 
-// ** Router Imports
-import { Link } from 'react-router-dom'
+// ** Scroll library
+import { SectionsContainer, Section } from 'react-fullpage'
 
-// ** Style
-import S from './style'
+// ** Page Imports
+import LoginPage from '../login'
+import RegisterPage from '../register'
+import ScrollView from '../../views/home/scollView'
+import UserScrollView from '../../views/home/userScollView'
 
 function HomePage() {
+    const [loginPage, setLoginPage] = useState(true)
+
+    let options = {
+        anchors: [1, 2],
+    }
+
     return (
-        <S.Outer>
-            <S.Text>렌더 페이지 입니다.</S.Text>
-            <Link to="/login">
-                <S.LoginBtn>로그인</S.LoginBtn>
-            </Link>
-        </S.Outer>
+        <SectionsContainer {...options}>
+            <Section>
+                <ScrollView />
+            </Section>
+            <Section>
+                {/* {loginPage ? <LoginPage setLoginPage={setLoginPage} /> : <RegisterPage />} */}
+                <UserScrollView />
+            </Section>
+        </SectionsContainer>
     )
 }
 

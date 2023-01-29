@@ -11,14 +11,21 @@
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
     },
     "dependencies": {
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
+        "@fullpage/react-fullpage": "^0.1.31",
+        "@mui/icons-material": "^5.11.0",
+        "@mui/material": "^5.11.6",
         "@reduxjs/toolkit": "^1.9.1",
         "axios": "^1.2.1",
         "react": "^18.2.0",
         "react-cookie": "^4.1.1",
         "react-dom": "^18.2.0",
-        "react-full-page": "^0.1.12",
+        "react-fullpage": "^0.1.19",
         "react-redux": "^8.0.5",
         "react-router-dom": "^6.6.1",
+        "react-slick": "^0.29.0",
+        "slick-carousel": "^1.8.1",
         "styled-components": "^5.3.6"
     },
     "devDependencies": {

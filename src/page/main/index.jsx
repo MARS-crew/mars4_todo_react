@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react'
 // ** Style
 import S from './style'
 
-import { FullPage, Slide } from 'react-full-page'
+// ** Scroll library
+import { SectionsContainer, Section } from 'react-fullpage'
 
 // ** Other Views Imports
 import TodoList from '../../views/main/todoList'
@@ -37,27 +38,31 @@ function MainPage() {
         dispatch(fetchData())
     }, [dispatch, reRenderSwitch])
 
+    let options = {
+        anchors: [1, 2, 3, 4, 5],
+    }
+
     return (
-        <FullPage>
-            <Slide>
+        <SectionsContainer {...options}>
+            <Section>
                 <S.Text>Main Page</S.Text>
                 <AddForm setReRenderSwitch={setReRenderSwitch} />
                 <TodoList responseData={responseData} />
                 <FirstView />
-            </Slide>
-            <Slide>
+            </Section>
+            <Section>
                 <SecondView />
-            </Slide>
-            <Slide>
+            </Section>
+            <Section>
                 <ThirdView />
-            </Slide>
-            <Slide>
+            </Section>
+            <Section>
                 <FourthView />
-            </Slide>
-            <Slide>
+            </Section>
+            <Section>
                 <FifthView />
-            </Slide>
-        </FullPage>
+            </Section>
+        </SectionsContainer>
     )
 }
 

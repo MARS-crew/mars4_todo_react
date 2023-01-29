@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // ** React Imports
 import React, { useState } from 'react'
 
@@ -7,13 +9,40 @@ import { Link, useNavigate } from 'react-router-dom'
 // ** Api Imports
 import { loginApi } from '../../api/auth'
 
-// ** Style
-import S from './style'
+// ** Mui Imports
+import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import CssBaseline from '@mui/material/CssBaseline'
+import TextField from '@mui/material/TextField'
+import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Dialog from '@mui/material/Dialog'
+import DialogTitle from '@mui/material/DialogTitle'
+import DialogActions from '@mui/material/DialogActions'
 
-function LoginPage() {
+const theme = createTheme()
+
+function LoginPage(props) {
+    const { setLoginPage } = props
     const [user, setUser] = useState({ id: '', password: '' })
 
+    const [open, setOpen] = useState(false)
+    const [openFalse, setOpenFalse] = useState(false)
+
+    const [message, setMessgae] = useState('로그인에 성공하였습니다.')
+    const [messageFalse, setMessgaeFalse] = useState('')
+
     const navigate = useNavigate()
+
+    const handleOpen = () => setOpen(true)
+    const handleFalseOpen = () => setOpenFalse(true)
+    const handleClose = () => setOpen(false)
+    const handleFalseClose = () => setOpenFalse(false)
+    const handleSuccess = () => navigate('/main')
 
     const onChange = (e) => {
         const { name, value } = e.target
@@ -24,32 +53,125 @@ function LoginPage() {
     }
 
     const onCLickLoginBtn = async () => {
+        if (!user.id || user.id === '') {
+            setMessgaeFalse('id를 입력해주세요.')
+            handleFalseOpen()
+
+            return
+        }
+        if (!user.password || user.password === '') {
+            setMessgaeFalse('password 입력해주세요.')
+            handleFalseOpen()
+
+            return
+        }
+
         try {
             const { data } = await loginApi(user)
-            if (data.status === 200) {
-                alert('로그인 성공')
-                navigate('/main')
+            if (data.status !== 200) {
+                setMessgaeFalse(data.message)
+                handleFalseOpen()
+
+                return
             }
-            console.log(res)
+
+            handleOpen()
         } catch (err) {
             console.log(err)
+            setMessgaeFalse('에러가 발생하였습니다.')
+            handleFalseOpen()
         }
     }
 
     return (
-        <S.Outer>
-            <S.Input placeholder="Enter ID" onChange={onChange} name="id" />
-            <S.Input
-                placeholder="Enter Password"
-                onChange={onChange}
-                type="password"
-                name="password"
-            />
-            <S.LoginBtn onClick={onCLickLoginBtn}>LOGIN</S.LoginBtn>
-            <Link to="/register">
-                <S.PText>회원가입하기</S.PText>
-            </Link>
-        </S.Outer>
+        <ThemeProvider theme={theme}>
+            <Dialog
+                open={open}
+                disableEscapeKeyDown
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+                onClose={(event, reason) => {
+                    if (reason !== 'backdropClick') {
+                        handleClose()
+                    }
+                }}
+            >
+                <DialogTitle id="alert-dialog-title">{message}</DialogTitle>
+                <DialogActions className="dialog-actions-dense">
+                    <Button onClick={handleSuccess}>확인</Button>
+                </DialogActions>
+            </Dialog>
+            <Dialog
+                open={openFalse}
+                disableEscapeKeyDown
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+                onClose={(event, reason) => {
+                    if (reason !== 'backdropClick') {
+                        handleFalseClose()
+                    }
+                }}
+            >
+                <DialogTitle id="alert-dialog-title">{messageFalse}</DialogTitle>
+                <DialogActions className="dialog-actions-dense">
+                    <Button onClick={handleFalseClose}>확인</Button>
+                </DialogActions>
+            </Dialog>
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <Box
+                    sx={{
+                        marginTop: 8,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                        로그인
+                    </Typography>
+                    <Box noValidate sx={{ mt: 1 }}>
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            label="id"
+                            name="id"
+                            onChange={onChange}
+                            autoFocus
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="password"
+                            type="password"
+                            onChange={onChange}
+                            autoComplete="current-password"
+                        />
+                        <Button
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                            onClick={onCLickLoginBtn}
+                        >
+                            로그인
+                        </Button>
+                        <Grid container>
+                            <Grid item xs />
+                            <Grid item>
+                                {/* <Link to="/register">{"Don't have an account? Sign Up"}</Link> */}
+                                <p onClick={() => setLoginPage(false)}>회원가입</p>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Box>
+            </Container>
+        </ThemeProvider>
     )
 }
 
