@@ -7,19 +7,24 @@ import { SectionsContainer, Section } from 'react-fullpage'
 // ** Page Imports
 import LoginPage from '../login'
 import RegisterPage from '../register'
+import ScrollView from '../../views/home/scollView'
+import UserScrollView from '../../views/home/userScollView'
 
 function HomePage() {
     const [loginPage, setLoginPage] = useState(true)
 
     let options = {
-        anchors: ['sectionOne', 'sectionTwo'],
+        anchors: [1, 2],
     }
 
     return (
         <SectionsContainer {...options}>
-            <Section></Section>
             <Section>
-                {loginPage ? <LoginPage setLoginPage={setLoginPage} /> : <RegisterPage />}
+                <ScrollView />
+            </Section>
+            <Section>
+                {/* {loginPage ? <LoginPage setLoginPage={setLoginPage} /> : <RegisterPage />} */}
+                <UserScrollView />
             </Section>
         </SectionsContainer>
     )
