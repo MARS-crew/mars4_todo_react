@@ -25,6 +25,7 @@ function MainPage() {
 
     const dispatch = useDispatch()
     const { loadingStat, responseData } = useSelector((state) => state.todo)
+    const a=1
 
     useEffect(() => {
         dispatch(fetchData())
