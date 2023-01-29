@@ -1,16 +1,15 @@
+// ** Scroll library
 import Slider from 'react-slick'
-import one from '/one.png'
-import two from '/two.png'
-import three from '/three.png'
-import four from '/four.png'
+
+// ** Styled-components Imports
 import styled from 'styled-components'
+
+// ** Other Views Imports
 import LoginPage from '../../page/login'
 import RegisterPage from '../../page/register'
 
 const S = {
-    img: styled.img`
-        height: 300px;
-    `,
+    sliderItem: styled.div``,
 }
 
 function UserScrollView() {
@@ -19,16 +18,17 @@ function UserScrollView() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        // fade: true,
+        fade: true,
     }
+
     return (
         <Slider {...settings}>
-            <div>
+            <S.sliderItem>
                 <LoginPage />
-            </div>
-            <div>
+            </S.sliderItem>
+            <S.sliderItem>
                 <RegisterPage />
-            </div>
+            </S.sliderItem>
         </Slider>
     )
 }

@@ -1,14 +1,20 @@
+// ** Scroll library
 import Slider from 'react-slick'
+
+// ** Styled-components Imports
+import styled from 'styled-components'
+
+// ** Statics Imports
 import one from '/one.png'
 import two from '/two.png'
 import three from '/three.png'
 import four from '/four.png'
-import styled from 'styled-components'
 
 const S = {
     img: styled.img`
         height: 300px;
     `,
+    sliderItem: styled.div``,
 }
 
 function ScrollView() {
@@ -17,22 +23,22 @@ function ScrollView() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        // fade: true,
+        fade: true,
     }
     return (
         <Slider {...settings}>
-            <div>
+            <S.sliderItem>
                 <S.img src={one} />
-            </div>
-            <div>
+            </S.sliderItem>
+            <S.sliderItem>
                 <S.img src={two} />
-            </div>
-            <div>
+            </S.sliderItem>
+            <S.sliderItem>
                 <S.img src={three} />
-            </div>
-            <div>
+            </S.sliderItem>
+            <S.sliderItem>
                 <S.img src={four} />
-            </div>
+            </S.sliderItem>
         </Slider>
     )
 }
