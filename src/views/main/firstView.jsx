@@ -1,5 +1,12 @@
+// ** Styled-components Imports
+import styled from 'styled-components'
+
+const S = {
+    title: styled.h1``,
+}
+
 function FirstView() {
-    return <h1>First View</h1>
+    return <S.title>저는 ‘술 그만 먹고 다른 것좀 해볼까?’ 라고 생각하는 사람입니다.</S.title>
 }
 
 export default FirstView

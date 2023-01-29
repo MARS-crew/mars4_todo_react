@@ -26,8 +26,7 @@ import DialogActions from '@mui/material/DialogActions'
 
 const theme = createTheme()
 
-function LoginPage(props) {
-    const { setLoginPage } = props
+function LoginPage() {
     const [user, setUser] = useState({ id: '', password: '' })
 
     const [open, setOpen] = useState(false)
@@ -165,7 +164,6 @@ function LoginPage(props) {
                             <Grid item xs />
                             <Grid item>
                                 {/* <Link to="/register">{"Don't have an account? Sign Up"}</Link> */}
-                                <p onClick={() => setLoginPage(false)}>회원가입</p>
                             </Grid>
                         </Grid>
                     </Box>

@@ -18,7 +18,6 @@ function UserScrollView() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        fade: true,
     }
 
     return (

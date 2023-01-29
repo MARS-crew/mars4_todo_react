@@ -45,9 +45,9 @@ function MainPage() {
     return (
         <SectionsContainer {...options}>
             <Section>
-                <S.Text>Main Page</S.Text>
+                {/* <S.Text>Main Page</S.Text>
                 <AddForm setReRenderSwitch={setReRenderSwitch} />
-                <TodoList responseData={responseData} />
+                <TodoList responseData={responseData} /> */}
                 <FirstView />
             </Section>
             <Section>

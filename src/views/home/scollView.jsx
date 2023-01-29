@@ -25,6 +25,7 @@ function ScrollView() {
         slidesToShow: 1,
         fade: true,
     }
+
     return (
         <Slider {...settings}>
             <S.sliderItem>
