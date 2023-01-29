@@ -14,7 +14,6 @@ import FirstView from '../../views/main/firstView'
 import SecondView from '../../views/main/secondView'
 import ThirdView from '../../views/main/thirdView'
 import FourthView from '../../views/main/fourthView'
-import FifthView from '../../views/main/fifthView'
 
 // ** Redux Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -39,7 +38,7 @@ function MainPage() {
     }, [dispatch, reRenderSwitch])
 
     let options = {
-        anchors: [1, 2, 3, 4, 5],
+        anchors: [1, 2, 3, 4],
     }
 
     return (
@@ -58,9 +57,6 @@ function MainPage() {
             </Section>
             <Section>
                 <FourthView />
-            </Section>
-            <Section>
-                <FifthView />
             </Section>
         </SectionsContainer>
     )
