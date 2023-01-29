@@ -27,6 +27,7 @@ import DialogActions from '@mui/material/DialogActions'
 const theme = createTheme()
 
 function LoginPage(props) {
+    const a = 1
     const { setLoginPage } = props
     const [user, setUser] = useState({ id: '', password: '' })
 
