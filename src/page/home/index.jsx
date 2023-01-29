@@ -10,7 +10,6 @@ import RegisterPage from '../register'
 import ScrollView from '../../views/home/scollView'
 import UserScrollView from '../../views/home/userScollView'
 
-const a= 1
 function HomePage() {
     const [loginPage, setLoginPage] = useState(true)
 
