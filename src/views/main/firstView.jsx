@@ -2,7 +2,11 @@
 import styled from 'styled-components'
 
 // ** Mui Imports
-import { Grid } from '@mui/material'
+import { Button, Card, Grid } from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete'
+import EditIcon from '@mui/icons-material/Edit'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import FirstCard from './fiirstCard'
 
 const S = {
     title: styled.h1``,
@@ -10,6 +14,14 @@ const S = {
 }
 
 function FirstView() {
+    const textArr = [
+        '어떻게 사람이!',
+        '어떻게 사람이!',
+        '어떻게 사람이!',
+        '어떻게 사람이!',
+        '어떻게 사람이!',
+        '어떻게 사람이!',
+    ]
     return (
         <Grid container spacing={6} sx={{ py: 10, px: 20 }}>
             <Grid item xs={12}>
@@ -17,6 +29,19 @@ function FirstView() {
             </Grid>
             <Grid item xs={12}>
                 <S.subTitle>내가 선택한 버킷리스트는?</S.subTitle>
+            </Grid>
+            <Grid item xs={12}>
+                <Grid container spacing={6}>
+                    <Grid item xs={4}>
+                        <FirstCard data={textArr} />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <FirstCard data={textArr} />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <FirstCard data={textArr} />
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     )
