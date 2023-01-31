@@ -2,15 +2,17 @@
 import styled from 'styled-components'
 
 // ** Mui Imports
-import { Button, Card, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
+import { Button, Card } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import FirstCard from './fiirstCard'
 
 const S = {
     title: styled.h1``,
     subTitle: styled.h3``,
+    list:styled.h4``,
 }
 
 function FirstView() {
