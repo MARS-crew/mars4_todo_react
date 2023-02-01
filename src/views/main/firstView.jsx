@@ -6,24 +6,37 @@ import { Grid } from '@mui/material'
 import { Button, Card } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import FirstCard from './fiirstCard'
 
 const S = {
     title: styled.h1``,
     subTitle: styled.h3``,
-    list:styled.h4``,
+    list: styled.h4``,
 }
 
 function FirstView() {
     const textArr = [
-        '어떻게 사람이!',
-        '어떻게 사람이!',
-        '어떻게 사람이!',
-        '어떻게 사람이!',
-        '어떻게 사람이!',
-        '어떻게 사람이!',
+        {
+            title: '어떻게 지내니?',
+            subTitle: '어떻게 지내니?',
+            text: '어떻게 지내니?',
+            dataArr: ['어떻게 지내니?', '어떻게 지내니?'],
+        },
+        {
+            title: '어떻게 지내니?',
+            subTitle: '어떻게 지내니?',
+            text: '어떻게 지내니?',
+            dataArr: ['어떻게 지내니?', '어떻게 지내니?'],
+        },
+        {
+            title: '어떻게 지내니?',
+            subTitle: '어떻게 지내니?',
+            text: '어떻게 지내니?',
+            dataArr: ['어떻게 지내니?', '어떻게 지내니?'],
+        },
     ]
+
     return (
         <Grid container spacing={6} sx={{ py: 10, px: 20 }}>
             <Grid item xs={12}>
@@ -34,15 +47,11 @@ function FirstView() {
             </Grid>
             <Grid item xs={12}>
                 <Grid container spacing={6}>
-                    <Grid item xs={4}>
-                        <FirstCard data={textArr} />
-                    </Grid>
-                    <Grid item xs={4}>
-                        <FirstCard data={textArr} />
-                    </Grid>
-                    <Grid item xs={4}>
-                        <FirstCard data={textArr} />
-                    </Grid>
+                    {textArr.map((item, index) => (
+                        <Grid item xs={4} key={index}>
+                            <FirstCard data={item} name="김인후" />
+                        </Grid>
+                    ))}
                 </Grid>
             </Grid>
         </Grid>
