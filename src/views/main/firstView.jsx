@@ -18,22 +18,25 @@ const S = {
 function FirstView() {
     const textArr = [
         {
-            title: '어떻게 지내니?',
-            subTitle: '어떻게 지내니?',
-            text: '어떻게 지내니?',
-            dataArr: ['어떻게 지내니?', '어떻게 지내니?'],
+            title: '다이어트',
+            subTitle: '20대 초',
+            text: '하루 12시간 공복 지키는 법',
+            dataArr: ['어떻게 지내니?', '어떻게 지내니?','어떻게 지내니?',
+            '어떻게 지내니?','어떻게 지내니?','어떻게 지내니?',],
         },
         {
             title: '어떻게 지내니?',
             subTitle: '어떻게 지내니?',
             text: '어떻게 지내니?',
-            dataArr: ['어떻게 지내니?', '어떻게 지내니?'],
+            dataArr: ['어떻게 지내니?', '어떻게 지내니?','어떻게 지내니?',
+            '어떻게 지내니?','어떻게 지내니?','어떻게 지내니?',],
         },
         {
             title: '어떻게 지내니?',
             subTitle: '어떻게 지내니?',
             text: '어떻게 지내니?',
-            dataArr: ['어떻게 지내니?', '어떻게 지내니?'],
+            dataArr: ['어떻게 지내니?', '어떻게 지내니?','어떻게 지내니?',
+            '어떻게 지내니?','어떻게 지내니?','어떻게 지내니?',],
         },
     ]
 
@@ -49,7 +52,7 @@ function FirstView() {
                 <Grid container spacing={6}>
                     {textArr.map((item, index) => (
                         <Grid item xs={4} key={index}>
-                            <FirstCard data={item} name="김인후" />
+                            <FirstCard data={item} name="" />
                         </Grid>
                     ))}
                 </Grid>

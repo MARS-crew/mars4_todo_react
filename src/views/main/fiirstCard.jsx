@@ -21,33 +21,33 @@ function FirstCard(props) {
     return (
         <Card sx={{ p: 3 }}>
             <Grid container>
-                <Grid item xs={5}>
+                <Grid item xs={5} sx={{ my: 0.5 }}>
                     <S.subTitle style={{ color: 'blue' }}>{data.title}</S.subTitle>
                 </Grid>
                 <Grid item xs={3} />
-                <Grid item xs={4}>
+                <Grid item xs={4} sx={{ my: 0.5 }}>
                     <Button variant="outlined" sx={{ borderRadius: 30 }}>
                         {data.subTitle}
                     </Button>
                 </Grid>
-                <Grid item xs={12} sx={{ m: 3 }}>
+                <Grid item xs={12} sx={{ my: 3 }}>
                     <S.subTitle>{data.text}</S.subTitle>
                 </Grid>
                 <Grid item xs={12}>
                     <Grid container>
                         {data?.dataArr?.map((item, index) => (
                             <Grid key={index} container>
-                                <Grid item xs={1.5} sx={{ my: 1 }}>
+                                <Grid item xs={1} sx={{ mr: 1, my: 1 }}>
                                     <CheckCircleIcon style={{ color: '#f7b84b' }} />
                                 </Grid>
-                                <Grid item xs={6} sx={{ my: 1 }}>
+                                <Grid item xs={7.5} sx={{ my: 1 }}>
                                     <Typography align="justify">{item}</Typography>
                                 </Grid>
                                 <Grid item xs={1} sx={{ my: 1 }}>
-                                    <EditIcon />
+                                    <EditIcon fontSize='small'/>
                                 </Grid>
                                 <Grid item xs={1} sx={{ my: 1 }}>
-                                    <DeleteIcon />
+                                    <DeleteIcon fontSize='small'/>
                                 </Grid>
                             </Grid>
                         ))}
