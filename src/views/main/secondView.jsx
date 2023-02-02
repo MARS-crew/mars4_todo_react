@@ -3,11 +3,7 @@ import styled from 'styled-components'
 
 // ** Mui Imports
 import { Grid, Typography } from '@mui/material'
-import SecondCard from '../../components/SecondCard'
-
-const S = {
-    title: styled.h1``,
-}
+import SecondCard from './SecondCard'
 
 const data = [
     {
