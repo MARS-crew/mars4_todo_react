@@ -6,7 +6,6 @@ import { BASE_URL } from '..'
 
 const auth = axios.create({
     baseURL: `${BASE_URL}/user`,
-    withCredentials: true,
 })
 
 export const loginApi = async (user) => {

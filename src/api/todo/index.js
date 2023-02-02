@@ -6,7 +6,6 @@ import { BASE_URL } from '..'
 
 const todo = axios.create({
     baseURL: `${BASE_URL}/todo`,
-    withCredentials: true,
 })
 
 export const saveTodoApi = async (text) => {
