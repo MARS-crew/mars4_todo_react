@@ -22,12 +22,9 @@ function UserScrollView() {
 
     return (
         <Slider {...settings}>
-            <S.sliderItem>
-                <LoginPage />
-            </S.sliderItem>
-            <S.sliderItem>
-                <RegisterPage />
-            </S.sliderItem>
+            <RegisterPage />
+
+            <LoginPage />
         </Slider>
     )
 }
