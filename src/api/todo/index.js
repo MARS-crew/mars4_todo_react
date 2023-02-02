@@ -2,10 +2,10 @@
 
 // ** Axios Imports
 import axios from 'axios'
-import { BASE_URL } from '..'
+import { BASE_URL_DEV } from '..'
 
 const todo = axios.create({
-    baseURL: `${BASE_URL}/todo`,
+    baseURL: `${BASE_URL_DEV}/todo`,
 })
 
 export const saveTodoApi = async (text) => {

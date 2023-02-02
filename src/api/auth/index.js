@@ -2,10 +2,10 @@
 
 // ** Axios Imports
 import axios from 'axios'
-import { BASE_URL } from '..'
+import { BASE_URL_DEV } from '..'
 
 const auth = axios.create({
-    baseURL: `${BASE_URL}/user`,
+    baseURL: `${BASE_URL_DEV}/user`,
 })
 
 export const loginApi = async (user) => {

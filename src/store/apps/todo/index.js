@@ -4,10 +4,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 // ** Axios Imports
 import axios from 'axios'
-import { BASE_URL } from '../../../api'
+import { BASE_URL_DEV } from '../../../api'
 
 const todo = axios.create({
-    baseURL: `${BASE_URL}/todo`,
+    baseURL: `${BASE_URL_DEV}/todo`,
     withCredentials: true,
 })
 
