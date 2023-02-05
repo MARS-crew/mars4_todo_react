@@ -15,7 +15,6 @@ const S = {
 }
 
 function FirstCard(props) {
-    console.log('props', props)
     const { data } = props
 
     return (
@@ -44,10 +43,10 @@ function FirstCard(props) {
                                     <Typography align="justify">{item}</Typography>
                                 </Grid>
                                 <Grid item xs={1} sx={{ my: 1 }}>
-                                    <EditIcon fontSize='small'/>
+                                    <EditIcon fontSize="small" />
                                 </Grid>
                                 <Grid item xs={1} sx={{ my: 1 }}>
-                                    <DeleteIcon fontSize='small'/>
+                                    <DeleteIcon fontSize="small" />
                                 </Grid>
                             </Grid>
                         ))}
