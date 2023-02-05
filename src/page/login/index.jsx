@@ -163,7 +163,7 @@ function LoginPage() {
                         <Grid container>
                             <Grid item xs />
                             <Grid item>
-                                {/* <Link to="/register">{"Don't have an account? Sign Up"}</Link> */}
+                                <Link to="/register">Don't have an account? Sign Up</Link>
                             </Grid>
                         </Grid>
                     </Box>

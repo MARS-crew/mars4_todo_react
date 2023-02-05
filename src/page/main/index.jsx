@@ -1,18 +1,15 @@
 // ** React Imports
 import React, { useState, useEffect } from 'react'
 
-// ** Scroll library
-import { SectionsContainer, Section } from 'react-fullpage'
-
 // ** Other Views Imports
-import FirstView from '../../views/main/firstView'
-import SecondView from '../../views/main/secondView'
-import ThirdView from '../../views/main/thirdView'
-import FourthView from '../../views/main/fourthView'
+import MainHeader from '../../components/mainHeader'
 
 // ** Redux Imports
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from '../../store/apps/todo'
+import { Grid } from '@mui/material'
+import MyBucketCards from '../../views/main/myBucketCard'
+import MyContainingBucketCard from '../../views/main/myContainingBucketList'
 
 function MainPage() {
     // const [reRenderSwitch, setReRenderSwitch] = useState(false)
@@ -32,25 +29,18 @@ function MainPage() {
     //     dispatch(fetchData())
     // }, [dispatch, reRenderSwitch])
 
-    let options = {
-        anchors: [1, 2, 3, 4],
-    }
-
     return (
-        <SectionsContainer {...options}>
-            <Section>
-                <FirstView />
-            </Section>
-            <Section>
-                <SecondView />
-            </Section>
-            <Section>
-                <ThirdView />
-            </Section>
-            <Section>
-                <FourthView />
-            </Section>
-        </SectionsContainer>
+        <>
+            <MainHeader />
+            <Grid container spacing={6} sx={{ px: 20, py: 5 }}>
+                <Grid item xs={12}>
+                    <MyBucketCards />
+                </Grid>
+                <Grid item xs={12}>
+                    <MyContainingBucketCard />
+                </Grid>
+            </Grid>
+        </>
     )
 }
 
