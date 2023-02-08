@@ -2,7 +2,8 @@
 import React, { useState } from 'react'
 
 // ** Mui Imports
-import { ListItemButton, ListItemText, List } from '@mui/material'
+import { ListItemButton, ListItemText, List, makeStyles } from '@mui/material'
+import { createTheme, fontWeight, padding } from '@mui/system'
 
 function ListDivider() {
     const [selectedIndex, setSelectedIndex] = useState(0)
@@ -11,6 +12,7 @@ function ListDivider() {
         setSelectedIndex(index)
     }
 
+  
     return (
         <List sx={{ minWidth: 300, minHeight: 400, bgcolor: 'background.paper', p: 0 }}>
             <ListItemButton
@@ -19,7 +21,7 @@ function ListDivider() {
                 onClick={() => handleListItemClick(0)}
                 sx={{ minHeight: 80 }}
             >
-                <ListItemText primary="Inbox" />
+                <ListItemText  primary="#운동" sx={{ textAlign: 'center' }}  />
             </ListItemButton>
             <ListItemButton
                 divider={true}
@@ -27,7 +29,7 @@ function ListDivider() {
                 onClick={() => handleListItemClick(1)}
                 sx={{ minHeight: 80 }}
             >
-                <ListItemText primary="Drafts" />
+                <ListItemText primary="#공부"  sx={{ textAlign: 'center' }}/>
             </ListItemButton>
             <ListItemButton
                 divider={true}
@@ -35,7 +37,7 @@ function ListDivider() {
                 onClick={() => handleListItemClick(2)}
                 sx={{ minHeight: 80 }}
             >
-                <ListItemText primary="Trash" />
+                <ListItemText primary="#다이어트"  sx={{ textAlign: 'center' }}/>
             </ListItemButton>
             <ListItemButton
                 divider={true}
@@ -43,7 +45,7 @@ function ListDivider() {
                 onClick={() => handleListItemClick(3)}
                 sx={{ minHeight: 80 }}
             >
-                <ListItemText primary="Spam" />
+                <ListItemText primary="#독서" sx={{ textAlign: 'center' }}/>
             </ListItemButton>
             <ListItemButton
                 divider={true}
@@ -51,7 +53,7 @@ function ListDivider() {
                 onClick={() => handleListItemClick(4)}
                 sx={{ minHeight: 80 }}
             >
-                <ListItemText primary="Spam" />
+                <ListItemText primary="Spam" sx={{ textAlign: 'center' }}/>
             </ListItemButton>
         </List>
     )
