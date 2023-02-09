@@ -11,8 +11,8 @@ import { ScrollMenu } from 'react-horizontal-scrolling-menu'
 function HomeThirdView() {
     const data = [
         {
-            title: 'TEST1',
-            text: 'Hello React',
+            title: '달리기',
+            text: '매일 달리기',
         },
         {
             title: 'TEST2',
@@ -47,7 +47,7 @@ function HomeThirdView() {
     return (
         <Grid container>
             <Grid item xs={12} sx={{ mb: 3, pl: 2 }}>
-                <Typography variant="h4">자기계발</Typography>
+                <Typography variant="h4">자기개발</Typography>
             </Grid>
             <Grid item xs={12}>
                 <Grid container spacing={6}>
