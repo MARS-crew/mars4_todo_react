@@ -10,7 +10,15 @@ const todo = axios.create({
 
 export const saveTodoApi = async (text) => {
     try {
-        return await todo.post('/', { text })
+        return await todo.post(
+            '/',
+            { text },
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            }
+        )
     } catch (err) {
         console.log(err)
     }
@@ -18,7 +26,15 @@ export const saveTodoApi = async (text) => {
 
 export const updateTodoApi = async (id, text) => {
     try {
-        return await todo.put(`/${id}`, { text })
+        return await todo.put(
+            `/${id}`,
+            { text },
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            }
+        )
     } catch (err) {
         console.log(err)
     }
@@ -26,7 +42,11 @@ export const updateTodoApi = async (id, text) => {
 
 export const deleteTodoApi = async (id) => {
     try {
-        return await todo.delete(`/${id}`)
+        return await todo.delete(`/${id}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
     } catch (err) {
         console.log(err)
     }
