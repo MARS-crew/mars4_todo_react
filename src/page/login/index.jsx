@@ -10,19 +10,26 @@ import { Link, useNavigate } from 'react-router-dom'
 import { loginApi } from '../../api/auth'
 
 // ** Mui Imports
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import CssBaseline from '@mui/material/CssBaseline'
-import TextField from '@mui/material/TextField'
-import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
+import {
+    Avatar,
+    Button,
+    CssBaseline,
+    TextField,
+    Grid,
+    Box,
+    Typography,
+    Container,
+    createTheme,
+    ThemeProvider,
+    Dialog,
+    DialogTitle,
+    DialogActions,
+} from '@mui/material'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-import Dialog from '@mui/material/Dialog'
-import DialogTitle from '@mui/material/DialogTitle'
-import DialogActions from '@mui/material/DialogActions'
+
+// ** Redux Imports
+import { useDispatch } from 'react-redux'
+import { setLoginned } from '../../store/apps/user'
 
 const theme = createTheme()
 
@@ -36,6 +43,7 @@ function LoginPage() {
     const [messageFalse, setMessgaeFalse] = useState('')
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleOpen = () => setOpen(true)
     const handleFalseOpen = () => setOpenFalse(true)
@@ -74,6 +82,8 @@ function LoginPage() {
                 return
             }
 
+            dispatch(setLoginned({ name: data.responseData.name, token: data.responseData.token }))
+            localStorage.setItem('token', data.responseData.token)
             handleOpen()
         } catch (err) {
             console.log(err)
