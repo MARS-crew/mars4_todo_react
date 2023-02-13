@@ -2,20 +2,14 @@
 import { useState } from 'react'
 
 // ** Mui Imports
-import {
-    Card,
-    Grid,
-    Typography,
-    Checkbox,
-    TextField,
-    Button,
-    Dialog,
-    DialogTitle,
-    DialogActions,
-    DialogContent,
-} from '@mui/material'
+import { Card, Grid, Typography, Checkbox, Button } from '@mui/material'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
+
+// ** Other Views Imports
+import BasicModal from '../../../components/modal/basicModal'
+import SelectModal from '../../../components/modal/selectModal'
+import InputModal from '../../../components/modal/inputModal'
 
 function TodoItem(props) {
     // const { item } = props
@@ -44,53 +38,21 @@ function TodoItem(props) {
 
     return (
         <Card sx={{ minHeight: 60 }}>
-            <Dialog
-                open={open}
-                disableEscapeKeyDown
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleClose()
-                    }
-                }}
-            >
-                <DialogTitle>수정할 내용을 입력하세요.</DialogTitle>
-                <DialogContent>
-                    <TextField fullWidth onChange={onChange} value={text} />
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={modifyContent}>수정</Button>
-                    <Button onClick={handleClose}>취소</Button>
-                </DialogActions>
-            </Dialog>
-            <Dialog
-                open={openDelete}
-                disableEscapeKeyDown
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleDeleteClose()
-                    }
-                }}
-            >
-                <DialogTitle>정말로 삭제하시겠습니까?</DialogTitle>
-                <DialogActions>
-                    <Button onClick={handleDelete}>확인</Button>
-                    <Button onClick={handleDeleteClose}>취소</Button>
-                </DialogActions>
-            </Dialog>
-            <Dialog
-                open={openFalse}
-                disableEscapeKeyDown
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleFalseClose()
-                    }
-                }}
-            >
-                <DialogTitle>{messageFalse}</DialogTitle>
-                <DialogActions>
-                    <Button onClick={handleFalseClose}>확인</Button>
-                </DialogActions>
-            </Dialog>
+            <InputModal
+                state={open}
+                closeEvent={handleClose}
+                message="수정할 내용을 입력하세요."
+                event={modifyContent}
+                value={text}
+                onChange={onChange}
+            />
+            <SelectModal
+                state={openDelete}
+                closeEvent={handleDeleteClose}
+                message="정말로 삭제하시겠습니까?"
+                event={handleDelete}
+            />
+            <BasicModal state={openFalse} message={messageFalse} closeEvent={handleFalseClose} />
             <Grid container>
                 <Grid item xs={1.5}>
                     <Checkbox sx={{ minHeight: 60 }} />

@@ -2,19 +2,12 @@
 import { useEffect, useState } from 'react'
 
 // ** Mui Imports
-import {
-    Card,
-    Grid,
-    TextField,
-    Typography,
-    Dialog,
-    DialogTitle,
-    DialogActions,
-    Button,
-} from '@mui/material'
+import { Card, Grid, TextField, Typography } from '@mui/material'
 
 // ** Other Views Imports
 import TodoList from './components/todoList'
+import SelectModal from '../../components/modal/selectModal'
+import BasicModal from '../../components/modal/basicModal'
 
 // ** Scroll library
 import { ScrollMenu } from 'react-horizontal-scrolling-menu'
@@ -73,35 +66,13 @@ function MainSecondView() {
 
     return (
         <Grid container sx={{ px: 20, py: 5 }}>
-            <Dialog
-                open={open}
-                disableEscapeKeyDown
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleClose()
-                    }
-                }}
-            >
-                <DialogTitle>버킷을 생성하시겠습니까?</DialogTitle>
-                <DialogActions>
-                    <Button onClick={handleAddBucket}>확인</Button>
-                    <Button onClick={handleClose}>취소</Button>
-                </DialogActions>
-            </Dialog>
-            <Dialog
-                open={openFalse}
-                disableEscapeKeyDown
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleFalseClose()
-                    }
-                }}
-            >
-                <DialogTitle>{messageFalse}</DialogTitle>
-                <DialogActions>
-                    <Button onClick={handleFalseClose}>확인</Button>
-                </DialogActions>
-            </Dialog>
+            <SelectModal
+                state={open}
+                closeEvent={handleClose}
+                message="버킷을 생성하시겠습니까?"
+                event={handleAddBucket}
+            />
+            <BasicModal state={openFalse} closeEvent={handleFalseClose} message={messageFalse} />
             <Card sx={{ p: 4, borderRadius: 10 }}>
                 <Grid container spacing={6}>
                     <Grid item xs={12}>

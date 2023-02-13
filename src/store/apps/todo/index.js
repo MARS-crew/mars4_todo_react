@@ -51,7 +51,6 @@ export const appContentsSlice = createSlice({
 
         // ** Todo Data 가져오기fulfilled
         builder.addCase(fetchData.fulfilled, (state, action) => {
-            console.log(1, action.payload)
             state.errCd = action.payload.status
             state.errMsg = action.payload.message
             state.responseData = action.payload.responseData ? action.payload.responseData : null
