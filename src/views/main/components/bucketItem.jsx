@@ -2,7 +2,7 @@
 import { Grid, Typography, Button } from '@mui/material'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 
-function TabTextItem(props) {
+function BucketItem(props) {
     const { item, index } = props
 
     const handleDeleteOpen = () => {}
@@ -24,4 +24,4 @@ function TabTextItem(props) {
     )
 }
 
-export default TabTextItem
+export default BucketItem

@@ -1,10 +1,9 @@
 // ** Mui Imports
 import { Grid } from '@mui/material'
-import BucketList from '../../components/bucketList'
-import CategoryCircle from '../../components/categoryCircle'
-import ContentCard from '../../components/contentCard'
-import ListDivider from '../../components/listDivider'
-import SelectList from '../../components/selectList'
+
+// ** Other View Imports
+import BucketList from './components/bucketList'
+import SelectList from './components/selectList'
 
 function HomeFourthView() {
     return (

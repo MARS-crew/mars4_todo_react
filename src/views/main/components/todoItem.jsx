@@ -17,7 +17,7 @@ import {
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 
-function MyBucketItem(props) {
+function TodoItem(props) {
     // const { item } = props
     const [text, setText] = useState('')
 
@@ -115,4 +115,4 @@ function MyBucketItem(props) {
     )
 }
 
-export default MyBucketItem
+export default TodoItem

@@ -12,18 +12,28 @@ import RegisterPage from './page/register'
 import HomePage from './page/home'
 import GlobalStyle from './style/GlobalStyle'
 
-const getHomeRoute = () => {
-    return '/'
+// const getHomeRoute = () => {
+//     return '/'
+// }
+
+const getLoginRoute = () => {
+    return '/login'
 }
 
 function App() {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
-    // useEffect(() => {
-    //     const homeRoute = getHomeRoute()
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            const loginRoute = getLoginRoute()
+            navigate(loginRoute)
 
-    //     navigate(homeRoute)
-    // }, [])
+            return
+        }
+
+        // const homeRoute = getHomeRoute()
+        // navigate(homeRoute)
+    }, [])
 
     return (
         <>

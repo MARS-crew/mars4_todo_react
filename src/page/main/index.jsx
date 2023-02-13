@@ -2,10 +2,10 @@
 import React from 'react'
 
 // ** Other Views Imports
-import MainHeader from '../../components/mainHeader'
+import MainHeader from '../../views/main/mainHeader'
 import MainFirstView from '../../views/main/mainFirstView'
-import MyBucketCards from '../../views/main/myBucketCard'
-import MyContainingBucketCard from '../../views/main/myContainingBucketList'
+import MainSecondView from '../../views/main/mainSecondView'
+import MainThirdView from '../../views/main/mainThirdView'
 
 // ** Mui Imports
 import { Grid } from '@mui/material'
@@ -23,10 +23,10 @@ function MainPage() {
                 </Grid>
                 <Grid container sx={{ px: 20, py: 5, minHeight: 400 }}>
                     <Grid item xs={12}>
-                        <MyBucketCards />
+                        <MainSecondView />
                     </Grid>
                     <Grid item xs={12}>
-                        <MyContainingBucketCard />
+                        <MainThirdView />
                     </Grid>
                 </Grid>
             </Grid>

@@ -2,8 +2,8 @@
 import { Grid, Typography } from '@mui/material'
 
 // ** Other Views Imports
-import ContentCard from '../../components/contentCard'
-import ListDivider from '../../components/listDivider'
+import ContentCard from './components/contentCard'
+import ListDivider from './components/listDivider'
 
 // ** Scroll library
 import { ScrollMenu } from 'react-horizontal-scrolling-menu'

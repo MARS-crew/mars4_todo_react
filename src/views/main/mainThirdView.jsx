@@ -9,9 +9,9 @@ import { TabContext, TabList, TabPanel } from '@mui/lab'
 import { trashData } from '../../api'
 
 // ** Other Views Imports
-import BucketTabItem from '../../components/bucketTabItem'
+import BucketList from './components/bucketList'
 
-function MyContainingBucketCard() {
+function MainThirdView() {
     const [value, setValue] = useState(0)
 
     const handleChange = (event, newValue) => {
@@ -44,7 +44,7 @@ function MyContainingBucketCard() {
                                 <Grid item xs={12} sx={{ ml: -3 }}>
                                     {trashData.map((item, index) => (
                                         <TabPanel value={index} key={index}>
-                                            <BucketTabItem item={item} />
+                                            <BucketList item={item} />
                                         </TabPanel>
                                     ))}
                                 </Grid>
@@ -57,4 +57,4 @@ function MyContainingBucketCard() {
     )
 }
 
-export default MyContainingBucketCard
+export default MainThirdView

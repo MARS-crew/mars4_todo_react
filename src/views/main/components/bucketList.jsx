@@ -6,7 +6,7 @@ import { Grid, Tab, Typography } from '@mui/material'
 import { TabContext, TabList, TabPanel } from '@mui/lab'
 
 // ** Other Views Imports
-import TabTextItem from './tabTextItem'
+import BucketItem from './bucketItem'
 
 function BucketTabItem(props) {
     const { item: data } = props
@@ -37,7 +37,7 @@ function BucketTabItem(props) {
                             <Grid container spacing={2}>
                                 {item.children.map((item, index) => (
                                     <Grid item xs={12}>
-                                        <TabTextItem item={item} index={index} key={index} />
+                                        <BucketItem item={item} index={index} key={index} />
                                     </Grid>
                                 ))}
                             </Grid>

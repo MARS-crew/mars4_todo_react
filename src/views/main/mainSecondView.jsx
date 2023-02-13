@@ -14,7 +14,7 @@ import {
 } from '@mui/material'
 
 // ** Other Views Imports
-import MyBucketList from './myBucketList'
+import TodoList from './components/todoList'
 
 // ** Scroll library
 import { ScrollMenu } from 'react-horizontal-scrolling-menu'
@@ -26,7 +26,7 @@ import { saveTodoApi } from '../../api/todo'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from '../../store/apps/todo'
 
-function MyBucketCard() {
+function MainSecondView() {
     const dispatch = useDispatch()
     const { responseData, loadingStat } = useSelector((state) => state.todo)
 
@@ -116,13 +116,13 @@ function MyBucketCard() {
                     <Grid item xs={12}>
                         <ScrollMenu>
                             <Grid item xs={4} sx={{ p: 2 }}>
-                                <MyBucketList />
+                                <TodoList />
                             </Grid>
                             <Grid item xs={4} sx={{ p: 2 }}>
-                                <MyBucketList />
+                                <TodoList />
                             </Grid>
                             <Grid item xs={4} sx={{ p: 2 }}>
-                                <MyBucketList />
+                                <TodoList />
                             </Grid>
                         </ScrollMenu>
                     </Grid>
@@ -132,4 +132,4 @@ function MyBucketCard() {
     )
 }
 
-export default MyBucketCard
+export default MainSecondView

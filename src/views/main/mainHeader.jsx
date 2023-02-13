@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // ** Mui Imports
 import { Grid } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import Color from '../assets/color'
+import Color from '../../assets/color'
 
 function MainHeader() {
     return (
