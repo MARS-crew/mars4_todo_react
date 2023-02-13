@@ -1,10 +1,13 @@
+// ** React Imports
+import { useState } from 'react'
+
+// ** Mui Imports
 import {
     Card,
     Grid,
     Typography,
     Checkbox,
     TextField,
-    Box,
     Button,
     Dialog,
     DialogTitle,
@@ -13,8 +16,6 @@ import {
 } from '@mui/material'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
-import { useState } from 'react'
-import CheckIcon from '@mui/icons-material/Check'
 
 function MyBucketItem(props) {
     // const { item } = props
@@ -22,13 +23,16 @@ function MyBucketItem(props) {
 
     const [open, setOpen] = useState(false)
     const [openFalse, setOpenFalse] = useState(false)
+    const [openDelete, setOpenDelete] = useState(false)
 
     const [messageFalse, setMessgaeFalse] = useState('')
 
     const handleOpen = () => setOpen(true)
     const handleFalseOpen = () => setOpenFalse(true)
+    const handleDeleteOpen = () => setOpenDelete(true)
     const handleClose = () => setOpen(false)
     const handleFalseClose = () => setOpenFalse(false)
+    const handleDeleteClose = () => setOpenDelete(false)
 
     const handleDelete = () => {}
 
@@ -59,18 +63,31 @@ function MyBucketItem(props) {
                 </DialogActions>
             </Dialog>
             <Dialog
+                open={openDelete}
+                disableEscapeKeyDown
+                onClose={(event, reason) => {
+                    if (reason !== 'backdropClick') {
+                        handleDeleteClose()
+                    }
+                }}
+            >
+                <DialogTitle>정말로 삭제하시겠습니까?</DialogTitle>
+                <DialogActions>
+                    <Button onClick={handleDelete}>확인</Button>
+                    <Button onClick={handleDeleteClose}>취소</Button>
+                </DialogActions>
+            </Dialog>
+            <Dialog
                 open={openFalse}
                 disableEscapeKeyDown
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
                 onClose={(event, reason) => {
                     if (reason !== 'backdropClick') {
                         handleFalseClose()
                     }
                 }}
             >
-                <DialogTitle id="alert-dialog-title">{messageFalse}</DialogTitle>
-                <DialogActions className="dialog-actions-dense">
+                <DialogTitle>{messageFalse}</DialogTitle>
+                <DialogActions>
                     <Button onClick={handleFalseClose}>확인</Button>
                 </DialogActions>
             </Dialog>
@@ -90,7 +107,7 @@ function MyBucketItem(props) {
                 </Grid>
                 <Grid item xs={2}>
                     <Button sx={{ minHeight: 60 }}>
-                        <DeleteOutlineIcon onClick={handleDelete} />
+                        <DeleteOutlineIcon onClick={handleDeleteOpen} />
                     </Button>
                 </Grid>
             </Grid>

@@ -1,12 +1,18 @@
-import * as React from 'react'
+// ** React Imports
+import { useState } from 'react'
+
+// ** Mui Imports
 import { Box, Tab, Card, Grid, Typography } from '@mui/material'
 import { TabContext, TabList, TabPanel } from '@mui/lab'
 
+// ** Trash Data Imports
 import { trashData } from '../../api'
+
+// ** Other Views Imports
 import BucketTabItem from '../../components/bucketTabItem'
 
 function MyContainingBucketCard() {
-    const [value, setValue] = React.useState('1')
+    const [value, setValue] = useState(0)
 
     const handleChange = (event, newValue) => {
         setValue(newValue)
@@ -21,18 +27,28 @@ function MyContainingBucketCard() {
                     </Grid>
                     <Grid item xs={12}>
                         <TabContext value={value}>
-                            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                                <TabList onChange={handleChange} aria-label="lab API tabs example">
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                                        <TabList onChange={handleChange}>
+                                            {trashData.map((item, index) => (
+                                                <Tab
+                                                    label={`${item.name}(${item.children?.length})`}
+                                                    value={index}
+                                                    key={index}
+                                                />
+                                            ))}
+                                        </TabList>
+                                    </Box>
+                                </Grid>
+                                <Grid item xs={12} sx={{ ml: -3 }}>
                                     {trashData.map((item, index) => (
-                                        <Tab label={item.name} value={String(index)} key={index} />
+                                        <TabPanel value={index} key={index}>
+                                            <BucketTabItem item={item} />
+                                        </TabPanel>
                                     ))}
-                                </TabList>
-                            </Box>
-                            {trashData.map((item, index) => (
-                                <TabPanel value={String(index)} key={index}>
-                                    <BucketTabItem item={item} />
-                                </TabPanel>
-                            ))}
+                                </Grid>
+                            </Grid>
                         </TabContext>
                     </Grid>
                 </Grid>
