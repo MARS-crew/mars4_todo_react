@@ -47,7 +47,7 @@ function HomeThirdView() {
     return (
         <Grid container>
             <Grid item xs={12} sx={{ mb: 3, pl: 2 }}>
-                <Typography variant="h4">자기개발</Typography>
+                <Typography variant="h3">자기개발</Typography>
             </Grid>
             <Grid item xs={12}>
                 <Grid container spacing={6}>
