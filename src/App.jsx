@@ -10,7 +10,7 @@ import LoginPage from './page/login'
 import MainPage from './page/main'
 import RegisterPage from './page/register'
 import HomePage from './page/home'
-import GlobalStyle from './style/GlobalStyle'
+import GlobalStyle from './style/globalStyle'
 
 // const getHomeRoute = () => {
 //     return '/'
