@@ -9,7 +9,7 @@ import HomeFirstView from '../../views/home/homeFirstView'
 import HomeFourthView from '../../views/home/homeFourthView'
 import HomeSecondView from '../../views/home/HomeSecondView'
 import HomeThirdView from '../../views/home/homeThirdView'
-import HomeHeader from '../../components/homeHeader'
+import HomeHeader from '../../views/home/homeHeader'
 
 function HomePage() {
     return (

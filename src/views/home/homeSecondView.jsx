@@ -2,7 +2,7 @@
 import { Grid } from '@mui/material'
 
 // ** Other Views Imports
-import CategoryCircle from '../../components/categoryCircle'
+import CategoryCircle from './components/categoryCircle'
 
 function HomeSecondView() {
     const data = ['자기계발', '학업', '여행', '취미', '돈', '가족 친구', '특별한 경험']

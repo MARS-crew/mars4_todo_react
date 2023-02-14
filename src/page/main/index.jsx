@@ -1,36 +1,19 @@
 // ** React Imports
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 // ** Other Views Imports
-import MainHeader from '../../components/mainHeader'
-
-// ** Redux Imports
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchData } from '../../store/apps/todo'
-import { Grid } from '@mui/material'
-import MyBucketCards from '../../views/main/myBucketCard'
-import MyContainingBucketCard from '../../views/main/myContainingBucketList'
-import Color from '../../assets/color'
+import MainHeader from '../../views/main/mainHeader'
 import MainFirstView from '../../views/main/mainFirstView'
+import MainSecondView from '../../views/main/mainSecondView'
+import MainThirdView from '../../views/main/mainThirdView'
+
+// ** Mui Imports
+import { Grid } from '@mui/material'
+
+// ** Assets Imports
+import Color from '../../assets/color'
 
 function MainPage() {
-    // const [reRenderSwitch, setReRenderSwitch] = useState(false)
-
-    // const dispatch = useDispatch()
-    // const { loadingStat, responseData } = useSelector((state) => state.todo)
-
-    // useEffect(() => {
-    //     dispatch(fetchData())
-    // }, [])
-
-    // useEffect(() => {
-    //     if (reRenderSwitch) {
-    //         setReRenderSwitch(false)
-    //     }
-
-    //     dispatch(fetchData())
-    // }, [dispatch, reRenderSwitch])
-
     return (
         <>
             <MainHeader />
@@ -38,11 +21,13 @@ function MainPage() {
                 <Grid item xs={12} sx={{ backgroundColor: Color.grey, minHeight: 600 }}>
                     <MainFirstView />
                 </Grid>
-                <Grid item xs={12} sx={{ mt: -25 }}>
-                    <MyBucketCards />
-                </Grid>
-                <Grid item xs={12}>
-                    <MyContainingBucketCard />
+                <Grid container sx={{ px: 20, py: 5, minHeight: 400 }}>
+                    <Grid item xs={12}>
+                        <MainSecondView />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <MainThirdView />
+                    </Grid>
                 </Grid>
             </Grid>
         </>

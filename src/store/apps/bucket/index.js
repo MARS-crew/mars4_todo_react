@@ -12,12 +12,20 @@ const todo = axios.create({
 })
 
 export const fetchData = createAsyncThunk('appContents/fetchData', async () => {
-    const res = await todo.get('/')
+    const res = await todo.get('/', {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+    })
     return res.data
 })
 
 export const fetchNoData = createAsyncThunk('appContents/fetchNoData', async (id) => {
-    const res = await todo.get(`/${id}`)
+    const res = await todo.get(`/${id}`, {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+    })
     return res.data
 })
 
@@ -43,7 +51,7 @@ export const appContentsSlice = createSlice({
         builder.addCase(fetchData.fulfilled, (state, action) => {
             state.errCd = action.payload.status
             state.errMsg = action.payload.message
-            state.responseData = action.payload.result ? action.payload.result : null
+            state.responseData = action.payload.responseData ? action.payload.responseData : null
             if (state.loadingStat) {
                 state.loadingStat = false
             }
@@ -60,7 +68,7 @@ export const appContentsSlice = createSlice({
         builder.addCase(fetchNoData.fulfilled, (state, action) => {
             state.errCd = action.payload.status
             state.errMsg = action.payload.message
-            state.responseData = action.payload.result ? action.payload.result : null
+            state.responseData = action.payload.responseData ? action.payload.responseData : null
             if (state.loadingStat) {
                 state.loadingStat = false
             }
