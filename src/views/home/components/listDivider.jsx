@@ -12,7 +12,6 @@ function ListDivider() {
         setSelectedIndex(index)
     }
 
-  
     return (
         <List sx={{ minWidth: 300, minHeight: 400, bgcolor: 'background.paper', p: 0 }}>
             <ListItemButton
@@ -21,8 +20,14 @@ function ListDivider() {
                 onClick={() => handleListItemClick(0)}
                 sx={{ minHeight: 100 }}
             >
-                <ListItemText 
-                disableTypography primary={<Typography variant='h5' sx={{ textAlign: 'center' }} >#운동</Typography>} />
+                <ListItemText
+                    disableTypography
+                    primary={
+                        <Typography variant="h5" sx={{ textAlign: 'center' }}>
+                            #운동
+                        </Typography>
+                    }
+                />
             </ListItemButton>
             <ListItemButton
                 divider={true}
@@ -30,8 +35,14 @@ function ListDivider() {
                 onClick={() => handleListItemClick(1)}
                 sx={{ minHeight: 100 }}
             >
-                <ListItemText 
-                disableTypography primary={<Typography variant='h5' sx={{ textAlign: 'center' }} >#공부</Typography>} />
+                <ListItemText
+                    disableTypography
+                    primary={
+                        <Typography variant="h5" sx={{ textAlign: 'center' }}>
+                            #공부
+                        </Typography>
+                    }
+                />
             </ListItemButton>
             <ListItemButton
                 divider={true}
@@ -39,8 +50,14 @@ function ListDivider() {
                 onClick={() => handleListItemClick(2)}
                 sx={{ minHeight: 100 }}
             >
-                  <ListItemText 
-                disableTypography primary={<Typography variant='h5' sx={{ textAlign: 'center' }} >#다이어트</Typography>} />
+                <ListItemText
+                    disableTypography
+                    primary={
+                        <Typography variant="h5" sx={{ textAlign: 'center' }}>
+                            #다이어트
+                        </Typography>
+                    }
+                />
             </ListItemButton>
             <ListItemButton
                 divider={true}
@@ -48,10 +65,15 @@ function ListDivider() {
                 onClick={() => handleListItemClick(3)}
                 sx={{ minHeight: 100 }}
             >
-                  <ListItemText 
-                disableTypography primary={<Typography variant='h5' sx={{ textAlign: 'center' }} >#독서</Typography>} />
+                <ListItemText
+                    disableTypography
+                    primary={
+                        <Typography variant="h5" sx={{ textAlign: 'center' }}>
+                            #독서
+                        </Typography>
+                    }
+                />
             </ListItemButton>
-            
         </List>
     )
 }
