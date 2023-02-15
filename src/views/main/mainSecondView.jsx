@@ -2,21 +2,23 @@
 import { useEffect, useState } from 'react'
 
 // ** Mui Imports
-import { Card, Grid, TextField, Typography } from '@mui/material'
+import {
+ Card, Grid, TextField, Typography,
+} from '@mui/material'
 
 // ** Other Views Imports
+import { ScrollMenu } from 'react-horizontal-scrolling-menu'
+import { useDispatch, useSelector } from 'react-redux'
 import TodoList from './components/todoList'
 import SelectModal from '../../components/modal/selectModal'
 import BasicModal from '../../components/modal/basicModal'
 
 // ** Scroll library
-import { ScrollMenu } from 'react-horizontal-scrolling-menu'
 
 // ** Api Imports
 import { saveTodoApi } from '../../api/todo'
 
 // ** Redux Imports
-import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from '../../store/apps/todo'
 
 function MainSecondView() {
@@ -65,41 +67,41 @@ function MainSecondView() {
     if (loadingStat) return null
 
     return (
-        <Grid container sx={{ px: 20, py: 5 }}>
-            <SelectModal
-                state={open}
-                closeEvent={handleClose}
-                message="버킷을 생성하시겠습니까?"
-                event={handleAddBucket}
-            />
-            <BasicModal state={openFalse} closeEvent={handleFalseClose} message={messageFalse} />
-            <Card sx={{ p: 4, borderRadius: 10 }}>
-                <Grid container spacing={6}>
-                    <Grid item xs={12}>
-                        <Typography variant="h4">버킷리스트 작성</Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <TextField onKeyDown={handleOpen} onChange={onChangeText} fullWidth />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Typography variant="h4">내 버킷리스트</Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <ScrollMenu>
-                            <Grid item xs={4} sx={{ p: 2 }}>
-                                <TodoList />
-                            </Grid>
-                            <Grid item xs={4} sx={{ p: 2 }}>
-                                <TodoList />
-                            </Grid>
-                            <Grid item xs={4} sx={{ p: 2 }}>
-                                <TodoList />
-                            </Grid>
-                        </ScrollMenu>
-                    </Grid>
+      <Grid container sx={{ px: 20, py: 5 }}>
+        <SelectModal
+          state={open}
+          closeEvent={handleClose}
+          message="버킷을 생성하시겠습니까?"
+          event={handleAddBucket}
+        />
+        <BasicModal state={openFalse} closeEvent={handleFalseClose} message={messageFalse} />
+        <Card sx={{ p: 4, borderRadius: 10 }}>
+          <Grid container spacing={6}>
+            <Grid item xs={12}>
+              <Typography variant="h4">버킷리스트 작성</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField onKeyDown={handleOpen} onChange={onChangeText} fullWidth />
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="h4">내 버킷리스트</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <ScrollMenu>
+                <Grid item xs={4} sx={{ p: 2 }}>
+                  <TodoList />
                 </Grid>
-            </Card>
-        </Grid>
+                <Grid item xs={4} sx={{ p: 2 }}>
+                  <TodoList />
+                </Grid>
+                <Grid item xs={4} sx={{ p: 2 }}>
+                  <TodoList />
+                </Grid>
+              </ScrollMenu>
+            </Grid>
+          </Grid>
+        </Card>
+      </Grid>
     )
 }
 

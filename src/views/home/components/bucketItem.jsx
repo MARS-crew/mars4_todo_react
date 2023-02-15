@@ -2,7 +2,7 @@
 import { Grid } from '@mui/material'
 
 function BucketItem() {
-    return <Grid container></Grid>
+    return <Grid container />
 }
 
 export default BucketItem
