@@ -6,7 +6,7 @@ import { Grid, Typography } from '@mui/material'
 
 function HomeHeader() {
     return (
-      <Grid container spacing={6} sx={{ px: 20, py: 5 }} style={{display: "flex", alignItems: "center"}}>
+      <Grid container spacing={6} sx={{ px: 20, py: 5 }} style={{display: "flex", alignItems: "flex-end"}}>
         <Grid item xs={4}>
           <Typography variant="h3">BucketList</Typography>
         </Grid>
