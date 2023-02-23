@@ -1,5 +1,5 @@
 // ** Mui Imports
-import { Card, Grid, Typography } from '@mui/material'
+import { Card, Grid, CardMedia, Typography } from '@mui/material'
 
 function CategoryCircle(props) {
     const { data } = props
@@ -10,14 +10,18 @@ function CategoryCircle(props) {
     return (
       <Grid container>
         <Grid item xs={12} style={{display: "flex", justifyContent: "center"}}>
-          <Card sx={{ borderRadius: 50, width: 125, height: 125 }}
+          <Card sx={{ borderRadius: 50, width: 150, height: 150 }}
             onClick={clickHandler}
             >
+              <CardMedia
+              sx={{ height: 150 }}
+              image ={data.img}
+              />
             </Card>
           
         </Grid>
         <Grid item xs={12} style={{textAlign: "center"}}>
-          <Typography variant='h6'>{data}</Typography>
+          <Typography variant='h6'>{data.name}</Typography>
         </Grid>
       </Grid>
     )
