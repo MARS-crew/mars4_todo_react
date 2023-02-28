@@ -1,5 +1,5 @@
 // ** Mui Imports
-import { Grid } from '@mui/material'
+import { Accordion, Grid } from '@mui/material'
 
 // ** Other View Imports
 import BucketList from './components/bucketList'
