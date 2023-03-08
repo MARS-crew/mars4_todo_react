@@ -13,23 +13,23 @@ import HomeHeader from '../../views/home/homeHeader'
 
 function HomePage() {
     return (
-        <>
-            <HomeHeader />
-            <Grid container spacing={6} sx={{ px: 20, py: 5, minHeight: 400 }}>
-                <Grid item xs={12} sx={{ mb: 20 }}>
-                    <HomeFirstView />
-                </Grid>
-                <Grid item xs={12} sx={{ mb: 20 }}>
-                    <HomeSecondView />
-                </Grid>
-                <Grid item xs={12} sx={{ mb: 20 }}>
-                    <HomeThirdView />
-                </Grid>
-                <Grid item xs={12} sx={{ mb: 20 }}>
-                    <HomeFourthView />
-                </Grid>
-            </Grid>
-        </>
+      <>
+        <HomeHeader />
+        <Grid container spacing={6} sx={{ px: 20, py: 5, minHeight: 400 }}>
+          <Grid item xs={12} sx={{ mb: 20 }}>
+            <HomeFirstView />
+          </Grid>
+          <Grid item xs={12} sx={{ mb: 20 }}>
+            <HomeSecondView />
+          </Grid>
+          <Grid item xs={12} sx={{ mb: 20 }}>
+            <HomeThirdView />
+          </Grid>
+          <Grid item xs={12} sx={{ mb: 20 }}>
+            <HomeFourthView />
+          </Grid>
+        </Grid>
+      </>
     )
 }
 

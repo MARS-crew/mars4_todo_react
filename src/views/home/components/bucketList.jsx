@@ -1,14 +1,16 @@
 // ** Mui Imports
 // ** Other Views Imports
-import { Card, CardContent, Typography, Box } from '@mui/material'
+import {
+ Card, CardContent, Typography, Box,
+} from '@mui/material'
+import Checkbox from '@mui/material/Checkbox'
 import BucketItem from './bucketItem'
-import Checkbox from '@mui/material/Checkbox';
 import { useState } from "react";
 import Button from '@mui/material/Button';
 import { Label } from '@mui/icons-material';
 import { display } from '@mui/system';
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } }
 
 function BucketList() {
      const [Click, setClick] = useState(false);

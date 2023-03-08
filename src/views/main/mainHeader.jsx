@@ -8,13 +8,13 @@ import Color from '../../assets/color'
 
 function MainHeader() {
     return (
-        <Grid container spacing={6} sx={{ px: 10, py: 5, backgroundColor: Color.grey }}>
-            <Grid item xs={12}>
-                <Link to="/">
-                    <ArrowBackIcon />
-                </Link>
-            </Grid>
+      <Grid container spacing={6} sx={{ px: 10, py: 5, backgroundColor: Color.grey }}>
+        <Grid item xs={12}>
+          <Link to="/">
+            <ArrowBackIcon />
+          </Link>
         </Grid>
+      </Grid>
     )
 }
 

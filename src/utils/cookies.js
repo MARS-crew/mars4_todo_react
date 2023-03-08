@@ -7,9 +7,7 @@ const cookies = new Cookies()
  * @param {string} name
  * @returns cookies
  */
-export const getCookie = async (name) => {
-    return await cookies.get(name)
-}
+export const getCookie = async (name) => await cookies.get(name)
 
 /**
  * Cookie를 저장하는 함수
@@ -29,6 +27,4 @@ export const setCookie = async (name, value, option) => {
  * @param {string} name
  * @returns
  */
-export const removeCookie = async (name) => {
-    return cookies.remove(name)
-}
+export const removeCookie = async (name) => cookies.remove(name)

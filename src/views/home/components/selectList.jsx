@@ -24,6 +24,16 @@ function SelectList() {
                 </div>
             </CardContent>
         </Card>
+
+      <Card sx={{ minHeight: 800 }}>
+        <CardContent>
+          <Typography variant="h5" sx={{ mb: 2 }}>
+            건강한 몸 만들기#운동
+          </Typography>
+          <Typography variant="body2">건강한 몸 만들기#운동</Typography>
+        </CardContent>
+      </Card>
+>>>>>>> 61aab6322a1e7b7d38374827dbf6ca8c8f916660
     )
 }
 
